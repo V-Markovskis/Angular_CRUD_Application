@@ -2,12 +2,12 @@ import { Component, Input } from '@angular/core';
 import { IBook } from '../../models/book';
 
 @Component({
-  selector: 'app-books',
+  selector: 'app-book',
   standalone: true,
   imports: [],
-  templateUrl: './books.component.html',
-  styleUrl: './books.component.css',
+  templateUrl: './book.component.html',
+  styleUrl: './book.component.css',
 })
-export class BooksComponent {
+export class BookComponent {
   @Input() book: IBook;
 }

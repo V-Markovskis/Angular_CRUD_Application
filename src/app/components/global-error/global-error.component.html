@@ -1,1 +1,4 @@
-<p>global-error works!</p>
+<div *ngIf="errorService.error$ | async as error" class="error-container">
+  <span>{{ error }}</span>
+  <button class="button" (click)="errorService.clear()">&times;</button>
+</div>

@@ -1,11 +1,17 @@
-import { Directive } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, OnInit } from '@angular/core';
 
 @Directive({
   selector: '[appFocus]',
-  standalone: true
+  standalone: true,
 })
-export class FocusDirective {
+export class FocusDirective implements OnInit, AfterViewInit {
+  constructor(private element: ElementRef) {}
 
-  constructor() { }
+  ngAfterViewInit(): void {
+    // this.element.nativeElement.focus();
+  }
 
+  ngOnInit(): void {
+    this.element.nativeElement.focus();
+  }
 }

@@ -1,1 +1,41 @@
-<p>create-book works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <label for="title">Title:</label>
+  <br />
+  <input
+    type="text"
+    id="title"
+    placeholder="Enter book title"
+    formControlName="title"
+    appFocus
+  />
+  <p *ngIf="title.errors?.minlength && title.touched">
+    Min length 3 characters
+  </p>
+  <br />
+  <label for="author">Author:</label>
+  <br />
+  <input
+    type="text"
+    id="author"
+    placeholder="Enter book author"
+    formControlName="author"
+  />
+  <p *ngIf="author.errors?.minlength && author.touched">
+    Min length 3 characters
+  </p>
+  <br />
+  <label for="about">About:</label>
+  <br />
+  <input
+    type="text"
+    id="about"
+    placeholder="Enter book summary"
+    formControlName="about"
+  />
+  <p *ngIf="about.errors?.minlength && about.touched">
+    Min length 3 characters
+  </p>
+  <br />
+  <br />
+  <button type="submit">Create</button>
+</form>

@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ErrorService } from '../../services/error.service';
+import { AsyncPipe, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-global-error',
   standalone: true,
-  imports: [],
+  imports: [AsyncPipe, NgIf],
   templateUrl: './global-error.component.html',
-  styleUrl: './global-error.component.css'
+  styleUrl: './global-error.component.css',
 })
-export class GlobalErrorComponent {
+export class GlobalErrorComponent implements OnInit {
+  constructor(public errorService: ErrorService) {}
 
+  ngOnInit(): void {}
 }
