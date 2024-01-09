@@ -11,9 +11,7 @@ import { ModalService } from '../../services/modal.service';
 })
 export class AboutPageComponent {
   title = 'my-app';
-  // book: IBook[] = [];
   loading = false;
-  // books$: Observable<IBook[]>;
 
   constructor(
     public bookService: BooksService,
@@ -23,12 +21,6 @@ export class AboutPageComponent {
 
   ngOnInit(): void {
     this.loading = true;
-    // this.books$ = this.bookService.getAll().pipe(
-    //   tap(() => {
-    //     this.loading = false;
-    //     this.changeDetectorRef.detectChanges(); // Manually trigger change detection
-    //   })
-    // );
     this.bookService.getAll().subscribe(() => {
       this.loading = false;
     });

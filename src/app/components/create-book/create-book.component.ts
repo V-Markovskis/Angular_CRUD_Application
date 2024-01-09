@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, Input } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -9,6 +9,8 @@ import { NgIf } from '@angular/common';
 import { FocusDirective } from '../../directives/focus.directive';
 import { BooksService } from '../../services/books.service';
 import { ModalService } from '../../services/modal.service';
+import { EditStateService } from '../../services/edit-state.service';
+import { IBook } from '../../models/book';
 
 @Component({
   selector: 'app-create-book',
@@ -18,10 +20,21 @@ import { ModalService } from '../../services/modal.service';
   styleUrl: './create-book.component.css',
 })
 export class CreateBookComponent {
+  @Input() book: IBook | undefined;
   constructor(
     private bookService: BooksService,
-    private modalService: ModalService
+    private modalService: ModalService,
+    private editStateService: EditStateService
+    // private ref: ChangeDetectorRef
   ) {}
+
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   if (changes.book && changes.book.currentValue) {
+  //     this.form.patchValue(changes.book.currentValue);
+  //   } else {
+  //     this.form.reset();
+  //   }
+  // }
 
   form = new FormGroup({
     title: new FormControl<string>('', [
@@ -55,16 +68,39 @@ export class CreateBookComponent {
     return this.form.controls.about as FormControl;
   }
 
+  updateCurrentBook(book: IBook) {
+    if (this.book) {
+      book.title = this.form.value.title as string;
+      book.image = this.form.value.image as string;
+      book.author = this.form.value.author as string;
+      book.about = this.form.value.about as string;
+    }
+    return book;
+  }
+
   submit() {
-    this.bookService
-      .create({
-        title: this.form.value.title as string,
-        image: this.form.value.image as string,
-        author: this.form.value.author as string,
-        about: this.form.value.about as string,
-      })
-      .subscribe(() => {
-        this.modalService.close();
-      });
+    if (this.editStateService.isEditing) {
+      if (this.book) {
+        console.log('this.book', this.book);
+        this.bookService
+          .update(this.book.id!, this.updateCurrentBook(this.book))
+          .subscribe(() => {
+            this.editStateService.setIsEditingFalse();
+            // this.bookService.getAll().subscribe();
+            // this.ref.detectChanges();
+          });
+      }
+    } else {
+      this.bookService
+        .create({
+          title: this.form.value.title as string,
+          image: this.form.value.image as string,
+          author: this.form.value.author as string,
+          about: this.form.value.about as string,
+        })
+        .subscribe(() => {
+          this.modalService.close();
+        });
+    }
   }
 }

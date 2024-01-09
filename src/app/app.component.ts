@@ -11,6 +11,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { CreateBookComponent } from './components/create-book/create-book.component';
 import { ModalService } from './services/modal.service';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { BookDetailsComponent } from './components/book-details/book-details.component';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     ModalComponent,
     CreateBookComponent,
     NavigationComponent,
+    BookDetailsComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

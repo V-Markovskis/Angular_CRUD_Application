@@ -17,7 +17,6 @@ export class BooksService {
 
   getAll(): Observable<IBook[]> {
     return this.http.get<IBook[]>('http://localhost:3000/books').pipe(
-      retry(2),
       tap(books => (this.books = books)),
       catchError(this.errorHandler.bind(this))
     );
@@ -32,12 +31,22 @@ export class BooksService {
     );
   }
 
-  remove(id: string): Observable<void> {
-    console.log('hello from delete');
-    console.log('id', id);
+  remove(id: number): Observable<void> {
     return this.http.delete<void>(`http://localhost:3000/books/${id}`).pipe(
       tap(() => {
         this.books = this.books.filter(book => book.id !== id);
+      }),
+      catchError(this.errorHandler.bind(this))
+    );
+  }
+
+  update(id: number, book: IBook): Observable<IBook> {
+    console.log('update clicked + book data', book);
+    return this.http.put<IBook>(`http://localhost:3000/books/${id}`, book).pipe(
+      tap(book => {
+        // this.getAll();
+        this.books[id] = book;
+        console.log('this.books', this.books);
       }),
       catchError(this.errorHandler.bind(this))
     );

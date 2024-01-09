@@ -1,0 +1,21 @@
+<div *ngIf="book">
+  <div *ngIf="!editStateService.isEditing">
+    <button (click)="editStateService.setIsEditingTrue()">Edit</button>
+    <h3>{{ book.title }}</h3>
+    <img
+      class="image"
+      ngSrc="{{ book.image }}"
+      alt="image"
+      width="200"
+      height="200"
+      priority
+    />
+    <br />
+    <small>{{ book.author }}</small>
+    <p>{{ book.about }}</p>
+  </div>
+  <div *ngIf="editStateService.isEditing">
+    <button (click)="editStateService.setIsEditingFalse()">Cancel</button>
+    <app-create-book [book]="book"></app-create-book>
+  </div>
+</div>

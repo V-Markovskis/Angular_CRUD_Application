@@ -5,6 +5,7 @@ import { CreateBookComponent } from '../../components/create-book/create-book.co
 import { ModalComponent } from '../../components/modal/modal.component';
 import { BooksService } from '../../services/books.service';
 import { ModalService } from '../../services/modal.service';
+import { BookDetailsComponent } from '../../components/book-details/book-details.component';
 
 @Component({
   selector: 'app-book-page',

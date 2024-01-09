@@ -1,5 +1,7 @@
 <div class="containerTest">
-  <span>{{ book.title }}</span>
+  <a [routerLink]="['/books', book.id]">
+    <span>{{ book.title }}</span>
+  </a>
   <img
     class="image"
     ngSrc="{{ book.image }}"
