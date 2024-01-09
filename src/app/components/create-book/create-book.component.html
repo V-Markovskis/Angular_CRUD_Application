@@ -1,6 +1,9 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
   <label for="title">Title:</label>
   <br />
+  <p *ngIf="title.errors?.minlength && title.touched">
+    Min length 3 characters
+  </p>
   <input
     type="text"
     id="title"
@@ -8,33 +11,42 @@
     formControlName="title"
     appFocus
   />
-  <p *ngIf="title.errors?.minlength && title.touched">
-    Min length 3 characters
-  </p>
   <br />
-  <label for="author">Author:</label>
+  <label for="image">Image URL:</label>
+  <p *ngIf="image.errors?.minlength && image.touched">
+    Min length 10 characters
+  </p>
   <br />
   <input
     type="text"
-    id="author"
-    placeholder="Enter book author"
-    formControlName="author"
+    id="image"
+    placeholder="Book associations URL "
+    formControlName="image"
   />
+  <br />
+  <label for="author">Author:</label>
   <p *ngIf="author.errors?.minlength && author.touched">
     Min length 3 characters
   </p>
   <br />
+  <input
+    type="text"
+    id="author"
+    placeholder="Enter book summary"
+    formControlName="author"
+  />
+  <br />
   <label for="about">About:</label>
+  <p *ngIf="about.errors?.minlength && about.touched">
+    Min length 3 characters
+  </p>
   <br />
   <input
     type="text"
     id="about"
-    placeholder="Enter book summary"
+    placeholder="About book.."
     formControlName="about"
   />
-  <p *ngIf="about.errors?.minlength && about.touched">
-    Min length 3 characters
-  </p>
   <br />
   <br />
   <button type="submit">Create</button>

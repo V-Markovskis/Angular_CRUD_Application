@@ -22,9 +22,7 @@ import { ModalService } from '../../services/modal.service';
 })
 export class BookPageComponent {
   title = 'my-app';
-  // book: IBook[] = [];
   loading = false;
-  // books$: Observable<IBook[]>;
 
   constructor(
     public bookService: BooksService,

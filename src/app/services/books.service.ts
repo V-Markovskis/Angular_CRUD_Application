@@ -27,7 +27,19 @@ export class BooksService {
     return this.http.post<IBook>('http://localhost:3000/books', book).pipe(
       tap(book => {
         this.books.push(book);
-      })
+      }),
+      catchError(this.errorHandler.bind(this))
+    );
+  }
+
+  remove(id: string): Observable<void> {
+    console.log('hello from delete');
+    console.log('id', id);
+    return this.http.delete<void>(`http://localhost:3000/books/${id}`).pipe(
+      tap(() => {
+        this.books = this.books.filter(book => book.id !== id);
+      }),
+      catchError(this.errorHandler.bind(this))
     );
   }
 

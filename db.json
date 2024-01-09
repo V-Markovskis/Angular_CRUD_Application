@@ -1,40 +1,25 @@
 {
   "books": [
     {
-      "id": "1",
-      "author": "John Flower",
-      "title": "title",
-      "about": "Book is about adventure"
+      "title": "test1",
+      "image": "https://picsum.photos/200",
+      "author": "test1",
+      "about": "test1",
+      "id": 1
     },
     {
-      "id": "2",
-      "author": "Emily Sky",
-      "title": "Mystical Journeys",
-      "about": "Embark on a magical odyssey through enchanted realms and mythical landscapes. This book weaves tales of wonder and discovery, inviting readers into a world where every page is an adventure waiting to unfold."
+      "title": "test2",
+      "image": "https://picsum.photos/200",
+      "author": "test2",
+      "about": "test2",
+      "id": 2
     },
     {
-      "id": "3",
-      "author": "Alex Stone",
-      "title": "Beyond Horizons",
-      "about": "In the heart of the unknown, this book unfolds an epic saga of courage and exploration. Join the protagonist on an extraordinary quest that challenges the boundaries of the known, revealing the untold mysteries that lie beyond the horizons of imagination."
-    },
-    {
-      "id": "4",
-      "author": "Luna Nightshade",
-      "title": "Moonlit Secrets",
-      "about": "Secrets whispered by the moonlight are unveiled in this captivating book. Dive into a world where shadows hold hidden truths, and every turn of the page unravels a new layer of mystery. Adventure awaits those who dare to explore the moonlit secrets within."
-    },
-    {
-      "id": "5",
-      "author": "Oliver Quest",
-      "title": "Quest for Destiny",
-      "about": "Embark on an epic quest for destiny in this riveting book. With each chapter, the protagonist faces trials, encounters mystical beings, and discovers the true essence of their existence. Join the journey, and let destiny unfold through the pages of this extraordinary tale."
-    },
-    {
-      "id": "6",
-      "author": "Aria Starlight",
-      "title": "Celestial Chronicles",
-      "about": "The cosmos unfolds its secrets in this celestial chronicle. Through the lens of the author's imagination, explore otherworldly landscapes, encounter celestial beings, and traverse dimensions beyond comprehension. This book invites readers to embark on a cosmic adventure through the boundless realms of the universe."
+      "title": "test3",
+      "image": "https://picsum.photos/200",
+      "author": "test3",
+      "about": "test3",
+      "id": 3
     }
   ]
 }

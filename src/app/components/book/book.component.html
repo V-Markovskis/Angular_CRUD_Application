@@ -1,7 +1,13 @@
 <div class="containerTest">
   <span>{{ book.title }}</span>
-  <br />
+  <img
+    class="image"
+    ngSrc="{{ book.image }}"
+    alt="image"
+    width="200"
+    height="200"
+    priority
+  />
   <span>{{ book.author }}</span>
-  <br />
-  <span>{{ book.about }}</span>
+  <button (click)="removeBook(book)">Delete</button>
 </div>

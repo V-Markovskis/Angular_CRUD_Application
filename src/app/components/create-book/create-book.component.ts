@@ -28,6 +28,10 @@ export class CreateBookComponent {
       Validators.required,
       Validators.minLength(3),
     ]),
+    image: new FormControl<string>('', [
+      Validators.required,
+      Validators.minLength(10),
+    ]),
     author: new FormControl<string>('', [
       Validators.required,
       Validators.minLength(3),
@@ -41,6 +45,9 @@ export class CreateBookComponent {
   get title() {
     return this.form.controls.title as FormControl;
   }
+  get image() {
+    return this.form.controls.image as FormControl;
+  }
   get author() {
     return this.form.controls.author as FormControl;
   }
@@ -52,6 +59,7 @@ export class CreateBookComponent {
     this.bookService
       .create({
         title: this.form.value.title as string,
+        image: this.form.value.image as string,
         author: this.form.value.author as string,
         about: this.form.value.about as string,
       })
