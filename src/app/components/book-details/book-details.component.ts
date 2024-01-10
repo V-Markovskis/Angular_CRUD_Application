@@ -19,8 +19,7 @@ export class BookDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private bookService: BooksService,
-    public editStateService: EditStateService,
-    private ref: ChangeDetectorRef
+    public editStateService: EditStateService
   ) {}
 
   ngOnInit(): void {
@@ -31,9 +30,5 @@ export class BookDetailsComponent implements OnInit {
         book => book.id === bookIdFromRoute
       );
     });
-  }
-
-  ngDoCheck(): void {
-    this.ref.detectChanges();
   }
 }

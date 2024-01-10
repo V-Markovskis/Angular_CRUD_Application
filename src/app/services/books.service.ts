@@ -44,9 +44,9 @@ export class BooksService {
     console.log('update clicked + book data', book);
     return this.http.put<IBook>(`http://localhost:3000/books/${id}`, book).pipe(
       tap(book => {
-        // this.getAll();
-        this.books[id] = book;
-        console.log('this.books', this.books);
+        console.log('this.http', this.http);
+        // this.books[id] = book;
+        this.getAll();
       }),
       catchError(this.errorHandler.bind(this))
     );

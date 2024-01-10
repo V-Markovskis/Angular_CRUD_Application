@@ -1,4 +1,9 @@
-import { ChangeDetectorRef, Component, Input } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  Input,
+  SimpleChanges,
+} from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -25,16 +30,15 @@ export class CreateBookComponent {
     private bookService: BooksService,
     private modalService: ModalService,
     private editStateService: EditStateService
-    // private ref: ChangeDetectorRef
   ) {}
 
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   if (changes.book && changes.book.currentValue) {
-  //     this.form.patchValue(changes.book.currentValue);
-  //   } else {
-  //     this.form.reset();
-  //   }
-  // }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.book && changes.book.currentValue) {
+      this.form.patchValue(changes.book.currentValue);
+    } else {
+      this.form.reset();
+    }
+  }
 
   form = new FormGroup({
     title: new FormControl<string>('', [
@@ -81,13 +85,10 @@ export class CreateBookComponent {
   submit() {
     if (this.editStateService.isEditing) {
       if (this.book) {
-        console.log('this.book', this.book);
         this.bookService
           .update(this.book.id!, this.updateCurrentBook(this.book))
           .subscribe(() => {
             this.editStateService.setIsEditingFalse();
-            // this.bookService.getAll().subscribe();
-            // this.ref.detectChanges();
           });
       }
     } else {
