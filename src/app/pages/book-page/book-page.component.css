@@ -2,3 +2,11 @@
   display: flex;
   gap: 15px;
 }
+
+.create-book-container {
+  margin-top: 20px;
+}
+
+.modal-container {
+  margin-top: 50px;
+}

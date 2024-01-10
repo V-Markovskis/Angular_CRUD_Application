@@ -1,6 +1,16 @@
 <div *ngIf="book">
-  <div *ngIf="!editStateService.isEditing">
-    <button (click)="editStateService.setIsEditingTrue()">Edit</button>
+  <div
+    *ngIf="!editStateService.isEditing"
+    class="book-details-container-extended"
+  >
+    <div>
+      <button
+        class="btn btn-warning"
+        (click)="editStateService.setIsEditingTrue()"
+      >
+        Edit
+      </button>
+    </div>
     <h3>{{ book.title }}</h3>
     <img
       class="image"
@@ -12,10 +22,17 @@
     />
     <br />
     <small>{{ book.author }}</small>
-    <p>{{ book.about }}</p>
+    <p class="about-page">{{ book.about }}</p>
   </div>
   <div *ngIf="editStateService.isEditing">
-    <button (click)="editStateService.setIsEditingFalse()">Cancel</button>
-    <app-create-book [book]="book"></app-create-book>
+    <button
+      class="btn btn-secondary"
+      (click)="editStateService.setIsEditingFalse()"
+    >
+      Cancel
+    </button>
+    <div class="edit-book-container">
+      <app-create-book [book]="book"></app-create-book>
+    </div>
   </div>
 </div>

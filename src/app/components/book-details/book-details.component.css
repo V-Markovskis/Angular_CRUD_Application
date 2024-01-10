@@ -1,0 +1,28 @@
+.book-details-container-extended {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 400px;
+  background-color: #75b4b4;
+}
+
+.image {
+  border-radius: 10px;
+}
+
+.about-page {
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.edit-book-container {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #d2bfa2;
+  max-width: 400px;
+}

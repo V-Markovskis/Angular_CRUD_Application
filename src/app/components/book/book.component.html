@@ -1,5 +1,8 @@
-<div class="containerTest">
-  <a [routerLink]="['/books', book.id]">
+<div class="book-details-container">
+  <a
+    [routerLink]="['/books', book.id]"
+    class="link-warning link-offset-2 link-opacity-50-hover link-underline-opacity-0"
+  >
     <span>{{ book.title }}</span>
   </a>
   <img
@@ -11,5 +14,5 @@
     priority
   />
   <span>{{ book.author }}</span>
-  <button (click)="removeBook(book)">Delete</button>
+  <button class="btn btn-warning" (click)="removeBook(book)">Delete</button>
 </div>

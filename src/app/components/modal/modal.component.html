@@ -1,5 +1,7 @@
-<button (click)="modalService.close()">-</button>
-<div>
-  <h3>{{ title | titlecase }}</h3>
-  <ng-content></ng-content>
+<div class="modal-container">
+  <button class="btn btn-info" (click)="modalService.close()">-</button>
+  <div>
+    <h3>{{ title | titlecase }}</h3>
+    <ng-content></ng-content>
+  </div>
 </div>

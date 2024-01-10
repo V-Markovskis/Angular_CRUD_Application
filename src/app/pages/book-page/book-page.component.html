@@ -15,6 +15,10 @@
   <app-create-book></app-create-book>
 </app-modal>
 
-<button (click)="modalService.open()" [disabled]="modalService.isDisabled">
+<button
+  class="btn btn-info"
+  (click)="modalService.open()"
+  [disabled]="modalService.isDisabled"
+>
   +
 </button>

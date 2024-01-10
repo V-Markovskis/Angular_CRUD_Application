@@ -1,0 +1,15 @@
+.create-form input {
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.create-form p {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  max-width: 200px;
+  padding: 2px;
+  background-color: red;
+}
+
