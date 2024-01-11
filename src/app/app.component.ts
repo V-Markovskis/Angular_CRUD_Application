@@ -1,15 +1,11 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { BookComponent } from './components/book/book.component';
-import { IBook } from './models/book';
 import { HttpClientModule } from '@angular/common/http';
-import { BooksService } from './services/books.service';
-import { Observable, tap } from 'rxjs';
 import { GlobalErrorComponent } from './components/global-error/global-error.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { CreateBookComponent } from './components/create-book/create-book.component';
-import { ModalService } from './services/modal.service';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 
@@ -31,10 +27,3 @@ import { BookDetailsComponent } from './components/book-details/book-details.com
   styleUrl: './app.component.css',
 })
 export class AppComponent {}
-
-//return stream
-// this.bookService.getAll().subscribe(book => {
-//   this.book = book;
-//   this.loading = false;
-//   console.log(this.book);
-// });

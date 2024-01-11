@@ -11,6 +11,7 @@ import { BooksService } from '../../services/books.service';
 import { ModalService } from '../../services/modal.service';
 import { EditStateService } from '../../services/edit-state.service';
 import { IBook } from '../../models/book';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-book',
@@ -25,7 +26,8 @@ export class CreateBookComponent {
   constructor(
     private bookService: BooksService,
     private modalService: ModalService,
-    private editStateService: EditStateService
+    private editStateService: EditStateService,
+    private toastr: ToastrService
   ) {}
 
   // ngOnChanges(changes: SimpleChanges): void {
@@ -102,6 +104,7 @@ export class CreateBookComponent {
           .update(this.book.id!, this.updateCurrentBook(this.book))
           .subscribe(() => {
             this.editStateService.setIsEditingFalse();
+            this.toastr.success('Book record edited');
           });
       }
     } else {
@@ -114,6 +117,7 @@ export class CreateBookComponent {
         })
         .subscribe(() => {
           this.modalService.close();
+          this.toastr.success('Book record created');
         });
     }
   }
