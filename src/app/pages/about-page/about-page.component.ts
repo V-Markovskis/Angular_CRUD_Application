@@ -1,11 +1,12 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { BooksService } from '../../services/books.service';
 import { ModalService } from '../../services/modal.service';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-about-page',
   standalone: true,
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './about-page.component.html',
   styleUrl: './about-page.component.css',
 })

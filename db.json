@@ -1,53 +1,39 @@
 {
   "books": [
     {
-      "title": "CAPS AND SPA",
+      "title": "The Art of Programming",
       "image": "https://picsum.photos/200",
-      "author": "CAPS AND SPAM",
-      "about": "CAPS AND SPAM",
+      "author": "John Doe",
+      "about": "Programming",
+      "id": 1
+    },
+    {
+      "title": "Exploring the Cosmos",
+      "image": "https://picsum.photos/200",
+      "author": "Jane Smith",
+      "about": "Planets",
+      "id": 2
+    },
+    {
+      "title": "Cooking Delights",
+      "image": "https://picsum.photos/200",
+      "author": "Alex Johnson",
+      "about": "Discovering",
+      "id": 3
+    },
+    {
+      "title": "DELETE ME",
+      "image": "https://picsum.photos/200",
+      "author": "DELETE ME",
+      "about": "DELETE ME",
       "id": 4
     },
     {
-      "title": "ANGULARaaaaa",
+      "title": "EDIT ME",
       "image": "https://picsum.photos/200",
-      "author": "ANGULAR",
-      "about": "ANGULAR",
+      "author": "EDIT ME",
+      "about": "EDIT ME",
       "id": 5
-    },
-    {
-      "title": "GOGOGOG",
-      "image": "https://picsum.photos/200",
-      "author": "GOGOGOG",
-      "about": "GOGOGOG",
-      "id": 7
-    },
-    {
-      "title": "HELLO WORLD",
-      "image": "https://picsum.photos/200",
-      "author": "HELLO WORLD",
-      "about": "HELLO WORLD",
-      "id": 8
-    },
-    {
-      "title": "MYAPPAAAAAAAAA",
-      "image": "https://picsum.photos/200",
-      "author": "MYAPP",
-      "about": "MYAPP",
-      "id": 9
-    },
-    {
-      "title": "EDITEDAND 321da",
-      "image": "https://picsum.photos/200",
-      "author": "EDITEDAND HELLO",
-      "about": "EDITEDAND HELLO",
-      "id": 11
-    },
-    {
-      "title": "SPAM",
-      "image": "https://picsum.photos/200",
-      "author": "SPAM",
-      "about": "SPAM",
-      "id": 12
     }
   ]
 }
