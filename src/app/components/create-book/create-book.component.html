@@ -49,5 +49,11 @@
   />
   <br />
   <br />
-  <button class="btn btn-dark" type="submit">Create</button>
+  <button
+    class="btn btn-dark"
+    type="submit"
+    [disabled]="ifSubmitButtonDisabled()"
+  >
+    Create
+  </button>
 </form>

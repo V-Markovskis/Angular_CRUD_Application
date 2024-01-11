@@ -21,17 +21,26 @@ import { IBook } from '../../models/book';
 })
 export class CreateBookComponent {
   @Input() book: IBook | undefined;
+  isDisabled: boolean = true;
   constructor(
     private bookService: BooksService,
     private modalService: ModalService,
     private editStateService: EditStateService
   ) {}
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes.book && changes.book.currentValue) {
-      this.form.patchValue(changes.book.currentValue);
-    } else {
-      this.form.reset();
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   if (changes.book && changes.book.currentValue) {
+  //     this.form.patchValue(changes.book.currentValue);
+  //   } else {
+  //     this.form.reset();
+  //   }
+  // }
+  //https://angular.io/guide/reactive-forms
+  ngOnChanges(changes: SimpleChanges) {
+    if (this.book) {
+      if (this.editStateService.isEditing) {
+        this.form.patchValue(this.book);
+      }
     }
   }
 
@@ -53,6 +62,15 @@ export class CreateBookComponent {
       Validators.minLength(3),
     ]),
   });
+
+  ifSubmitButtonDisabled() {
+    if (this.form.status === 'INVALID') {
+      this.isDisabled = true;
+    } else {
+      this.isDisabled = false;
+    }
+    return this.isDisabled;
+  }
 
   get title() {
     return this.form.controls.title as FormControl;

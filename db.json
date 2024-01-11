@@ -1,7 +1,7 @@
 {
   "books": [
     {
-      "title": "CAPS AND SPAM",
+      "title": "CAPS AND SPA",
       "image": "https://picsum.photos/200",
       "author": "CAPS AND SPAM",
       "about": "CAPS AND SPAM",
@@ -36,11 +36,11 @@
       "id": 9
     },
     {
-      "title": "test",
+      "title": "EDITEDAND HELLO",
       "image": "https://picsum.photos/200",
-      "author": "test",
-      "about": "test",
-      "id": 10
+      "author": "EDITEDAND HELLO",
+      "about": "EDITEDAND HELLO",
+      "id": 11
     }
   ]
 }
